@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Timing Side-Channel Visualizer
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<header>
+
+    <div>
+
+        <p class="eyebrow">
+            IT SECURITY LAB
+        </p>
+
+        <h1>
+            Timing Side-Channel Visualizer
+        </h1>
+
+        <p class="subtitle">
+            Visualizing information leakage
+            through execution time
+        </p>
+
+    </div>
+
+    <span class="lab-badge">
+        LOCAL LAB
+    </span>
+
+</header>
+
+
+<main>
+
+
+    <section class="stats-grid">
+
+        <div class="stat-card">
+
+            <span>
+                Status
+            </span>
+
+            <strong id="status">
+                Idle
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Recovered Prefix
+            </span>
+
+            <strong id="prefix">
+                ????
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Current Position
+            </span>
+
+            <strong id="position">
+                -
+            </strong>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span>
+                Current Guess
+            </span>
+
+            <strong id="guess">
+                ----
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <section class="controls">
+
+        <button
+            id="start-button"
+            onclick="startAttack()"
+        >
+            Start Timing Attack
+        </button>
+
+        <button
+            class="secondary"
+            onclick="resetAttack()"
+        >
+            Reset
+        </button>
+
+    </section>
+
+
+    <section class="panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    LIVE MEASUREMENTS
+                </p>
+
+                <h2>
+                    Candidate Timings
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div id="candidate-container">
+
+            <p class="empty">
+                Start the demo to collect
+                timing measurements.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <p class="eyebrow">
+                    RECOVERY PROGRESS
+                </p>
+
+                <h2>
+                    Detected Digits
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="steps-container"
+            class="steps"
+        >
+
+            <p class="empty">
+                No digits recovered yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section
+        id="result-panel"
+        class="result-panel hidden"
+    >
+
+        <p>
+            RECOVERED PIN
+        </p>
+
+        <strong id="found-pin">
+            ----
+        </strong>
+
+    </section>
+
+
+    <p class="notice">
+        Educational local demonstration.
+        The included validator is intentionally
+        vulnerable and designed only for this lab.
+    </p>
+
+</main>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
