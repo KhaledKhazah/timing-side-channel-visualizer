@@ -130,6 +130,28 @@ The dashboard will display the timing measurements and recover the PIN step by s
 
 ---
 
+## Live Dashboard
+
+The dashboard visualizes the timing side-channel attack in real time.
+
+### Timing Analysis
+
+![Timing Analysis](screenshots/timing-analysis.png)
+
+This view shows the measured execution times for the tested PIN candidates.
+
+Longer execution times indicate that more leading digits of the PIN are correct, which allows the attack to recover the PIN step by step.
+
+### Recovered PIN
+
+![Recovered PIN](screenshots/recovered-pin.png)
+
+This view shows the final stage of the attack after all four PIN digits have been identified.
+
+The dashboard displays the recovered prefix, the completed PIN and the measurement results used during the attack.
+
+---
+
 ## Security Concept
 
 A timing side channel occurs when the execution time of a program depends on secret information.
